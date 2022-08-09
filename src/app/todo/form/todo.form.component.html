@@ -1,0 +1,9 @@
+<app-card [titulo]="titulo">
+    <div class="mb-3">
+        <label for="item" class="form-label">Item</label>
+        <input type="text" class="form-control" id="item" placeholder="O que você precisa fazer?"
+            [(ngModel)]="tarefa.descricao">
+        <button type="button" class="btn btn-primary mt-2" (click)="cadastro()" [disabled]="tarefa.descricao.length < 3">{{tituloBotao}}</button>
+        <button *ngIf="tarefa.id > 0" type="button" class="btn btn-primary mt-2 ms-2" (click)="novo()">Nova Tarefa</button>
+    </div>
+</app-card>

@@ -1,0 +1,8 @@
+<div class="container">
+  <h3>{{ title }}</h3>  
+  
+  <todo-form [titulo]="tituloCardCadastro" (addedTodo)="adicionarTarefa($event)" (updatedTodo)="atualizarTarefa($event)" 
+  (newTodo)="novaTarefa()" [tarefa]="tarefa"></todo-form>
+  
+  <todo-list [tarefas]="tarefas" (deleteTodo)="excluirTarefa($event)" (updateTodo)="alterarTarefa($event)"></todo-list>
+</div>

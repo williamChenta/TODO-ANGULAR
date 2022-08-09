@@ -1,0 +1,23 @@
+<div class="mt-2"></div>
+<app-card titulo="Coisas">
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Descrição</th>
+          <th scope="col">Concluida?</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tarefa of tarefas" style="cursor: pointer;" (click)="alterar(tarefa)">
+          <td style="display: none;">{{ tarefa.id }}</td>
+          <td>{{ tarefa.descricao | titlecase }}</td>
+          <td>{{ tarefa.concluida ? 'Sim' : 'Não' }}</td>
+          <td>
+              <button type="button" class="btn btn-success me-2" [disabled]="tarefa.concluida" (click)="concluir(tarefa)">Concluir</button>
+              <button type="button" class="btn btn-danger" (click)="excluir(tarefa)">Excluir</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</app-card>
